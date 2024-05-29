@@ -1,95 +1,230 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import ButtonLink from "@/components/buttonLink";
+import Heading from "@/components/heading";
+import Card, { CardBody, CardHeading } from "@/components/card";
+import Hero from "@/components/hero";
+import Wave from "@/icons/wave";
+import Dumbell from "@/icons/dumbell";
+import Locations from "@/icons/locations";
+import PageWrapper from "@/components/pageWrapper";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <>
+      <Head>
+        <title>CrossFit Potrero Hill</title>
+      </Head>
+      <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
+        <Heading headingLevel="h1">CrossFit Potrero Hill</Heading>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
+          San Francisco’s largest CrossFit community committed to helping our
+          diverse members hit their fitness goals.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+        <p className={styles.heroTagline}>We are ALL IN on fitness.</p>
+        <ButtonLink href="/free-intro" variant="primary" grow>
+          Schedule your free intro &#10132;
+        </ButtonLink>
+      </Hero>
+
+      <PageWrapper padding="tight" className={styles.features}>
+        <Card border>
+          <CardBody>
+            <Wave />
+            <CardHeading styleAs="h4">Everyone is welcome</CardHeading>
+            <p>
+              Community is at the core of who we are. We consider ourselves a
+              family, and strive to provide a welcoming and inclusive
+              environment for all, whether you’re new to fitness or a seasoned
+              athlete.
+            </p>
+          </CardBody>
+        </Card>
+
+        <Card border>
+          <CardBody>
+            <Dumbell />
+            <CardHeading styleAs="h4">Fun & effective workouts</CardHeading>
+            <p>
+              Diverse workouts combining strength training, gymnastics, and
+              cardio. Each workout can be be scaled to meet you where you’re at
+              and our coaches can work with you to adapt a workout to your
+              injuries.
+            </p>
+          </CardBody>
+        </Card>
+
+        <Card border>
+          <CardBody>
+            <Locations />
+            <CardHeading styleAs="h4">Two locations</CardHeading>
+            <p>
+              Members have access to our Potrero Hill and South Park locations
+              with up to eight classes offered at each and the option for open
+              gym.
+            </p>
+          </CardBody>
+        </Card>
+      </PageWrapper>
+
+      <PageWrapper padding="loose" className={styles.programs}>
+        <Heading headingLevel="h2">Choose a program that fits you!</Heading>
+
+        <Card className={styles.programGrid} background={false}>
+          <div>
+            <CardHeading headingLevel="h3">CrossFit</CardHeading>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              arcu arcu, cursus at ipsum at, dignissim egestas orci. Morbi
+              tincidunt sit amet orci ut ornare.
+            </p>
+          </div>
+
+          <figure className={styles.programFigure}>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+              src="/crossfit.jpg"
+              alt="Athletes doing situps"
+              width={500}
+              height={450}
+              className={styles.programImage}
             />
-          </a>
-        </div>
-      </div>
+          </figure>
+        </Card>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <Card className={styles.programGrid} background={false}>
+          <div>
+            <CardHeading headingLevel="h3">Elements</CardHeading>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              arcu arcu, cursus at ipsum at, dignissim egestas orci. Morbi
+              tincidunt sit amet orci ut ornare.{" "}
+            </p>
+          </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          <figure className={styles.programFigure}>
+            <Image
+              src="/crossfit.jpg"
+              alt="Athletes doing situps"
+              width={500}
+              height={450}
+              className={styles.programImage}
+            />
+          </figure>
+        </Card>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        <Card className={styles.programGrid} background={false}>
+          <div>
+            <CardHeading headingLevel="h3">Open Gym</CardHeading>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              arcu arcu, cursus at ipsum at, dignissim egestas orci. Morbi
+              tincidunt sit amet orci ut ornare.{" "}
+            </p>
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+          <figure className={styles.programFigure}>
+            <Image
+              src="/crossfit.jpg"
+              alt="Athletes doing situps"
+              width={500}
+              height={450}
+              className={styles.programImage}
+            />
+          </figure>
+        </Card>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <Card className={styles.programGrid} background={false}>
+          <div>
+            <CardHeading headingLevel="h3">Personal training</CardHeading>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              arcu arcu, cursus at ipsum at, dignissim egestas orci. Morbi
+              tincidunt sit amet orci ut ornare.
+            </p>
+          </div>
+
+          <figure className={styles.programFigure}>
+            <Image
+              src="/crossfit.jpg"
+              alt="Athletes doing situps"
+              width={500}
+              height={450}
+              className={styles.programImage}
+            />
+          </figure>
+        </Card>
+      </PageWrapper>
+
+      <section className={styles.gettingStarted}>
+        <PageWrapper as="div" padding="tight">
+          <div className={styles.gettingStartedGrid}>
+            <div className={styles.listWrap}>
+              <Heading styleAs="h3">Getting started is easy</Heading>
+
+              <ol className={styles.gettingStartedList}>
+                <li className={styles.gettingStartedItem}>
+                  <Heading headingLevel="h3" styleAs="h4">
+                    <strong className={styles.gettingStartedSubhead}>
+                      Step one <i aria-hidden>&rarr;</i>
+                    </strong>
+                    <span className={styles.gettingStartedHeading}>
+                      Try it out
+                    </span>
+                  </Heading>
+
+                  <p>
+                    New to CrossFit? Try out our free <b>Intro Class</b> and see
+                    if CrossFit is a good fit for you!
+                  </p>
+                </li>
+
+                <li className={styles.gettingStartedItem}>
+                  <Heading headingLevel="h3" styleAs="h4">
+                    <strong className={styles.gettingStartedSubhead}>
+                      Step two <i aria-hidden>&rarr;</i>
+                    </strong>
+                    <span className={styles.gettingStartedHeading}>
+                      On-ramp
+                    </span>
+                  </Heading>
+
+                  <p>
+                    Our comprehensive on-ramp program can help you get
+                    comfortable with the coaches, facility, and movements in
+                    just a few weeks.
+                  </p>
+                </li>
+
+                <li className={styles.gettingStartedItem}>
+                  <Heading headingLevel="h3" styleAs="h4">
+                    <strong className={styles.gettingStartedSubhead}>
+                      Step three <i aria-hidden>&rarr;</i>
+                    </strong>
+                    <span className={styles.gettingStartedHeading}>
+                      Crush it!
+                    </span>
+                  </Heading>
+
+                  <p>
+                    You’re good to go—sign up for one of our memberships and
+                    join our community to reach your fitness goals.
+                  </p>
+                </li>
+              </ol>
+            </div>
+
+            <figure className={styles.gettingStartedFigure}>
+              <Image
+                src="/crossfit-2.jpg"
+                alt="An athlete doing a push press"
+                style={{ objectFit: "cover" }}
+                fill={true}
+              />
+            </figure>
+          </div>
+        </PageWrapper>
+      </section>
+    </>
   );
 }

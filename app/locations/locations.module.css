@@ -1,0 +1,27 @@
+.wrapperGrid {
+  display: grid;
+  grid-gap: 1rem;
+
+  @media (min-width: 64em) {
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2rem;
+  }
+}
+
+.skewedHeading {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  background: var(--cfph-primary);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.about {
+  font-size: 1.2rem;
+  max-width: 70ch;
+}
+
+.iframe {
+  max-width: 100%;
+  height: auto;
+}

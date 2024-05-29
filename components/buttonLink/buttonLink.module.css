@@ -1,0 +1,28 @@
+.button {
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--cfph-primary);
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.secondary {
+  background-color: #fff;
+  color: var(--cfph-primary);
+}
+
+.primary {
+  background-color: var(--cfph-primary);
+  color: #fff;
+}
+
+.grow {
+  transition: transform 100ms ease-in-out;
+
+  @media (hover: hover) and (min-width: var(--mqMedium)) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

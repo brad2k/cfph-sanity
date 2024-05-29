@@ -1,0 +1,47 @@
+.root {
+  display: grid;
+  gap: 1.5rem;
+
+  @media (min-width: 64em) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 64em) {
+  .intro {
+    grid-column: 1 / span 3;
+  }
+}
+
+.price {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.savings {
+  color: var(--cfph-accent);
+  display: block;
+}
+
+.discount {
+  font-size: 1rem;
+}
+
+.cta {
+  margin-block: 2rem !important;
+}
+
+.accent {
+  text-decoration: underline overline wavy var(--cfph-accent);
+  text-underline-offset: 20%;
+}
+
+.process {
+  color: #fff;
+  background-color: var(--cfph-primary);
+  padding-block: 1rem;
+
+  @media (min-width: 64em) {
+    padding-block: 2rem;
+  }
+}

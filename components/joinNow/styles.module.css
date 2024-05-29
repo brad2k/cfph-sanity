@@ -1,0 +1,36 @@
+.root {
+  background-color: var(--cfph-primary);
+  color: #fff;
+  margin-block-start: 4rem;
+}
+
+.wrapper {
+  padding-block: 2rem;
+
+  @media (min-width: 64em) {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 3rem;
+    padding-block: 3rem;
+  }
+
+  & svg {
+    display: none;
+    width: auto;
+    height: 100%;
+
+    @media (min-width: 64em) {
+      display: block;
+    }
+  }
+}
+
+.content {
+  & > * {
+    margin-block: 0;
+  }
+
+  & > * + * {
+    margin-block-start: 1em;
+  }
+}
