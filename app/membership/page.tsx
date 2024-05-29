@@ -159,8 +159,8 @@ export default function Membership() {
           <Heading headingLevel="h3">Joining is easy</Heading>
           <ol>
             <li>
-              Click "Get started" above to be taken to Wodify, our scheduling
-              software.
+              Click &ldquo;Get started&rdquo; above to be taken to Wodify, our
+              scheduling software.
             </li>
             <li>
               Select the plan of your choice. You may be prompted to choose a
@@ -168,8 +168,8 @@ export default function Membership() {
               access at both locations.
             </li>
             <li>
-              You’ll need to create a Wodify account if you don't already have
-              one, which you'll use later to sign up for classes.
+              You’ll need to create a Wodify account if you don&aos;t already
+              have one, which you&apos;ll use later to sign up for classes.
             </li>
             <li>
               <div>

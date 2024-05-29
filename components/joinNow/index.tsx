@@ -9,7 +9,7 @@ export default function JoinNow() {
     <div className={styles.root}>
       <PageWrapper padding="tight" className={styles.wrapper}>
         <div className={styles.content}>
-          <Heading headingLevel="h2">Let's do this!</Heading>
+          <Heading headingLevel="h2">Let&apos;s do this!</Heading>
 
           <p>Come see us and start your journey to level up your fitness.</p>
 

@@ -94,7 +94,9 @@ export default function PotreroHillLocation() {
             Lockers (<abbr title="Bring your own">BYO</abbr> lock)
           </li>
           <li>Bike parking</li>
-          <li>"Not bad" street parking by San Francisco standards</li>
+          <li>
+            &ldquo;Not bad&rdquo; street parking by San Francisco standards
+          </li>
           <li>Snacks available for purchase</li>
           <li>
             Public <abbr title="Electric vehicle">EV</abbr> charging available
