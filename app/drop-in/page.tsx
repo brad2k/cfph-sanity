@@ -1,18 +1,18 @@
 import ButtonLink from "@/components/buttonLink";
-import Card, { CardBody, CardGrid, CardHeading } from "@/components/card";
+import Card, { CardBody } from "@/components/card";
 import Heading from "@/components/heading";
 import Hero from "@/components/hero";
 import PageWrapper from "@/components/pageWrapper";
-import Head from "next/head";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Drop in at CrossFit Potrero Hill",
+};
 
 export default function DropIn() {
   return (
     <>
-      <Head>
-        <title>Drop in at CrossFit Potrero Hill</title>
-      </Head>
-
       <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
         <Heading headingLevel="h1">Drop in</Heading>
       </Hero>

@@ -1,16 +1,17 @@
 import Heading from "@/components/heading";
 import Hero from "@/components/hero";
-import PageWrapper from "@/components/pageWrapper";
-import styles from "./styles.module.css";
 import JoinNow from "@/components/joinNow";
-import Head from "next/head";
+import PageWrapper from "@/components/pageWrapper";
+import { Metadata } from "next";
+import styles from "./styles.module.css";
+
+export const metadata: Metadata = {
+  title: "Coaches - CrossFit Potrero Hill",
+};
 
 export default function Coaches() {
   return (
     <>
-      <Head>
-        <title>Coaches - CrossFit Potrero Hill</title>
-      </Head>
       <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
         <Heading headingLevel="h1">Coaches</Heading>
       </Hero>

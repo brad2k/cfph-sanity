@@ -1,3 +1,7 @@
+.hero {
+  min-height: 65vh;
+}
+
 .heroTagline {
   font-size: 2rem;
 }

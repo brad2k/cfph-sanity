@@ -1,22 +1,28 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import ButtonLink from "@/components/buttonLink";
-import Heading from "@/components/heading";
 import Card, { CardBody, CardHeading } from "@/components/card";
+import Heading from "@/components/heading";
 import Hero from "@/components/hero";
-import Wave from "@/icons/wave";
+import PageWrapper from "@/components/pageWrapper";
 import Dumbell from "@/icons/dumbell";
 import Locations from "@/icons/locations";
-import PageWrapper from "@/components/pageWrapper";
-import Head from "next/head";
+import Wave from "@/icons/wave";
+import Image from "next/image";
+import styles from "./page.module.css";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CrossFit Potrero Hill",
+};
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>CrossFit Potrero Hill</title>
-      </Head>
-      <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
+      <Hero
+        img="/cfph-hero.jpg"
+        alt="Athletes warming up for a workout"
+        className={styles.hero}
+      >
         <Heading headingLevel="h1">CrossFit Potrero Hill</Heading>
         <p>
           San Francisco’s largest CrossFit community committed to helping our

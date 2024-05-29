@@ -9,11 +9,11 @@
     justify-content: space-between;
     align-items: center;
   }
-}
 
-.enableHover {
-  &:hover .dropdown {
-    display: block;
+  @media (min-width: 64em) {
+    &:hover .dropdown {
+      display: block;
+    }
   }
 }
 

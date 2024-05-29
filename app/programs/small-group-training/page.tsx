@@ -1,18 +1,19 @@
-import PageWrapper from "@/components/pageWrapper";
-import Heading from "@/components/heading";
-import styles from "../programs.module.css";
-import Hero from "@/components/hero";
 import Card, { CardBody, CardHeading } from "@/components/card";
-import Image from "next/image";
+import Heading from "@/components/heading";
+import Hero from "@/components/hero";
 import JoinNow from "@/components/joinNow";
-import Head from "next/head";
+import PageWrapper from "@/components/pageWrapper";
+import { Metadata } from "next";
+import Image from "next/image";
+import styles from "../programs.module.css";
+
+export const metadata: Metadata = {
+  title: "Small group training at CrossFit Potrero Hill",
+};
 
 export default function ProgramSmallGroupTraining() {
   return (
     <>
-      <Head>
-        <title>Small group training - CrossFit Potrero Hill</title>
-      </Head>
       <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
         <Heading headingLevel="h1">Small group training</Heading>
       </Hero>

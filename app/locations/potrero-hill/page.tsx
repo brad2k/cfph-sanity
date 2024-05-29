@@ -1,16 +1,17 @@
-import PageWrapper from "@/components/pageWrapper";
 import Heading from "@/components/heading";
-import JoinNow from "@/components/joinNow";
-import styles from "../locations.module.css";
 import Hero from "@/components/hero";
-import Head from "next/head";
+import JoinNow from "@/components/joinNow";
+import PageWrapper from "@/components/pageWrapper";
+import { Metadata } from "next";
+import styles from "../locations.module.css";
+
+export const metadata: Metadata = {
+  title: "Location - CrossFit Potrero Hill",
+};
 
 export default function PotreroHillLocation() {
   return (
     <>
-      <Head>
-        <title>Location - CrossFit Potrero Hill</title>
-      </Head>
       <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
         <Heading headingLevel="h1">Potrero Hill</Heading>
       </Hero>

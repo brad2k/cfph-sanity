@@ -1,16 +1,17 @@
-import PageWrapper from "@/components/pageWrapper";
 import Heading from "@/components/heading";
-import JoinNow from "@/components/joinNow";
-import styles from "../locations.module.css";
 import Hero from "@/components/hero";
-import Head from "next/head";
+import JoinNow from "@/components/joinNow";
+import PageWrapper from "@/components/pageWrapper";
+import { Metadata } from "next";
+import styles from "../locations.module.css";
+
+export const metadata: Metadata = {
+  title: "Location - CrossFit South Park",
+};
 
 export default function SouthParkLocation() {
   return (
     <>
-      <Head>
-        <title>Location - CrossFit South Park</title>
-      </Head>
       <Hero img="/cfsp-hero.jpg" alt="CrossFit South Park gym floor">
         <Heading headingLevel="h1">South Park</Heading>
       </Hero>

@@ -2,14 +2,15 @@ import Heading from "@/components/heading";
 import Hero from "@/components/hero";
 import JoinNow from "@/components/joinNow";
 import PageWrapper from "@/components/pageWrapper";
-import Head from "next/head";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About us - CrossFit Potrero Hill",
+};
 
 export default function AboutUs() {
   return (
     <>
-      <Head>
-        <title>About us - CrossFit Potrero Hill</title>
-      </Head>
       <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
         <Heading headingLevel="h1">About CrossFit Potrero Hill</Heading>
       </Hero>

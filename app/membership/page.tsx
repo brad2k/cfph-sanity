@@ -1,18 +1,19 @@
-import PageWrapper from "@/components/pageWrapper";
-import Heading from "@/components/heading";
-import styles from "./membership.module.css";
-import Hero from "@/components/hero";
-import Card, { CardBody, CardHeading } from "@/components/card";
 import ButtonLink from "@/components/buttonLink";
+import Card, { CardBody, CardHeading } from "@/components/card";
+import Heading from "@/components/heading";
+import Hero from "@/components/hero";
+import PageWrapper from "@/components/pageWrapper";
 import clsx from "clsx";
-import Head from "next/head";
+import { Metadata } from "next";
+import styles from "./membership.module.css";
+
+export const metadata: Metadata = {
+  title: "Membership options - CrossFit Potrero Hill",
+};
 
 export default function Membership() {
   return (
     <>
-      <Head>
-        <title>Membership options - CrossFit Potrero Hill</title>
-      </Head>
       <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
         <Heading headingLevel="h1">Membership</Heading>
       </Hero>

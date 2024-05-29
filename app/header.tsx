@@ -1,16 +1,16 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./header.module.css";
 import ButtonLink from "@/components/buttonLink";
-import { useEffect, useState } from "react";
 import {
-  DropdownWrapper,
   DropdownList,
   DropdownListItem,
   DropdownTrigger,
+  DropdownWrapper,
 } from "@/components/dropdown";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import styles from "./header.module.css";
 
 type NavContentProps = {
   visible: boolean;
@@ -105,7 +105,7 @@ function NavContent({ visible, setVisible }: NavContentProps) {
 }
 
 export default function Header() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
     document.body.style.overflow = visible ? "hidden" : "unset";
