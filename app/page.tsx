@@ -34,7 +34,7 @@ export default function Home() {
         </ButtonLink>
       </Hero>
 
-      <PageWrapper padding="tight" className={styles.features}>
+      <PageWrapper padding="tight" className={styles.features} owl={false}>
         <Card border>
           <CardBody>
             <Wave />
@@ -54,9 +54,8 @@ export default function Home() {
             <CardHeading styleAs="h4">Fun & effective workouts</CardHeading>
             <p>
               Diverse workouts combining strength training, gymnastics, and
-              cardio. Each workout can be be scaled to meet you where you’re at
-              and our coaches can work with you to adapt a workout to your
-              injuries.
+              cardio. Workouts can be be scaled to meet you where you’re at and
+              be adapted to injuries or limitations.
             </p>
           </CardBody>
         </Card>

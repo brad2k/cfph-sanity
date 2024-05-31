@@ -46,6 +46,10 @@
   & li:not(:last-child) {
     margin-block-end: 0.2rem;
   }
+
+  & a {
+    font-weight: 400;
+  }
 }
 
 @media (min-width: 64em) {
