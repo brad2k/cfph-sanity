@@ -1,9 +1,14 @@
 .hero {
-  min-height: 320px;
+  min-height: 400px !important;
 }
 
 .heroTagline {
   font-size: 2rem;
+}
+
+.features {
+  display: grid;
+  gap: 1rem;
 }
 
 @media (min-width: 64em) {
@@ -11,8 +16,6 @@
     margin-top: -5rem;
     position: relative;
     z-index: 0;
-    display: grid;
-    gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -49,21 +52,23 @@
 .programFigure {
   margin-top: 1rem;
   position: relative;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .programFigure {
     justify-self: end;
-  }
 
-  &::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 3%;
-    top: 3%;
-    border: 3px solid #eee;
-    z-index: -1;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 3%;
+      top: 3%;
+      border: 3px solid #eee;
+      z-index: -1;
+    }
   }
 }
 
@@ -79,8 +84,10 @@
 
 .gettingStartedGrid {
   color: #fff;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .gettingStartedGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;

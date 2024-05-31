@@ -51,7 +51,7 @@ export default function Home() {
         <Card border>
           <CardBody>
             <Dumbell />
-            <CardHeading styleAs="h4">Fun & effective workouts</CardHeading>
+            <CardHeading styleAs="h4">Fun &amp; effective</CardHeading>
             <p>
               Diverse workouts combining strength training, gymnastics, and
               cardio. Workouts can be be scaled to meet you where you’re at and
@@ -77,14 +77,14 @@ export default function Home() {
         <Heading headingLevel="h2">Choose a program that fits you!</Heading>
 
         <Card className={styles.programGrid} background={false}>
-          <div>
+          <CardBody>
             <CardHeading headingLevel="h3">CrossFit</CardHeading>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
               arcu arcu, cursus at ipsum at, dignissim egestas orci. Morbi
               tincidunt sit amet orci ut ornare.
             </p>
-          </div>
+          </CardBody>
 
           <figure className={styles.programFigure}>
             <Image
@@ -98,14 +98,14 @@ export default function Home() {
         </Card>
 
         <Card className={styles.programGrid} background={false}>
-          <div>
+          <CardBody>
             <CardHeading headingLevel="h3">Elements</CardHeading>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
               arcu arcu, cursus at ipsum at, dignissim egestas orci. Morbi
               tincidunt sit amet orci ut ornare.{" "}
             </p>
-          </div>
+          </CardBody>
 
           <figure className={styles.programFigure}>
             <Image
@@ -119,14 +119,14 @@ export default function Home() {
         </Card>
 
         <Card className={styles.programGrid} background={false}>
-          <div>
+          <CardBody>
             <CardHeading headingLevel="h3">Open Gym</CardHeading>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
               arcu arcu, cursus at ipsum at, dignissim egestas orci. Morbi
               tincidunt sit amet orci ut ornare.{" "}
             </p>
-          </div>
+          </CardBody>
 
           <figure className={styles.programFigure}>
             <Image
@@ -140,14 +140,14 @@ export default function Home() {
         </Card>
 
         <Card className={styles.programGrid} background={false}>
-          <div>
+          <CardBody>
             <CardHeading headingLevel="h3">Personal training</CardHeading>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
               arcu arcu, cursus at ipsum at, dignissim egestas orci. Morbi
               tincidunt sit amet orci ut ornare.
             </p>
-          </div>
+          </CardBody>
 
           <figure className={styles.programFigure}>
             <Image

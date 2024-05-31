@@ -1,8 +1,10 @@
 .h1 {
   font-size: var(--h2);
   line-height: 1.2;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .h1 {
     font-size: var(--h1);
     line-height: 1.4;
   }
@@ -11,8 +13,10 @@
 .h2 {
   font-size: var(--h3);
   line-height: 1.2;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .h2 {
     font-size: var(--h2);
     line-height: 1.4;
   }

@@ -1,8 +1,10 @@
 .wrapperGrid {
   display: grid;
   grid-gap: 1rem;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .wrapperGrid {
     grid-template-columns: 1fr 2fr;
     grid-gap: 2rem;
   }
@@ -22,6 +24,6 @@
 }
 
 .iframe {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }

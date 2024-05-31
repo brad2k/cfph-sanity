@@ -14,8 +14,10 @@
 
   background-color: #fff;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .header {
     padding-left: 2.8rem;
     padding-right: 2.8rem;
   }
@@ -31,14 +33,16 @@
   &:active {
     transform: scale(0.7);
   }
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .toggle {
     display: none;
   }
 }
 
-.nav {
-  @media (max-width: calc(64em - 1px)) {
+@media (max-width: calc(64em - 1px)) {
+  .nav {
     position: absolute;
     width: 100vw;
     height: calc(100vh - var(--navHeight));
@@ -47,8 +51,10 @@
     background-color: #fff;
     overflow: scroll;
   }
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .nav {
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -59,8 +65,10 @@
   list-style-type: none;
   margin-block-end: 1.5rem;
   padding-inline-start: 0;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .navMain {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -74,10 +82,13 @@
 
 .navMain a {
   display: block;
+  font-weight: 500;
   padding: 0.6rem 1rem;
   text-underline-position: auto;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .navMain a {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
   }

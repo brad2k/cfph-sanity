@@ -22,8 +22,10 @@
 .padding-loose {
   margin-block: 3rem;
   padding-inline: 1rem;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .padding-loose {
     margin-block: 6rem;
     padding-inline: 0;
   }
@@ -32,8 +34,10 @@
 .padding-tight {
   margin-block: 1.5rem;
   padding-inline: 1em;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .padding-tight {
     margin-block: 3rem;
     padding-inline: 0;
   }

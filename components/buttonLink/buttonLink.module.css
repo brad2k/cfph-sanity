@@ -19,8 +19,10 @@
 
 .grow {
   transition: transform 100ms ease-in-out;
+}
 
-  @media (hover: hover) and (min-width: var(--mqMedium)) {
+@media (hover: hover) and (min-width: 64em) {
+  .grow {
     &:hover {
       transform: scale(1.1);
     }

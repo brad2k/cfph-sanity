@@ -1,8 +1,10 @@
 .root {
   display: grid;
   gap: 1.5rem;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .root {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -40,8 +42,10 @@
   color: #fff;
   background-color: var(--cfph-primary);
   padding-block: 1rem;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .process {
     padding-block: 2rem;
   }
 }

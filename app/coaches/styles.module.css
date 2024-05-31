@@ -3,8 +3,10 @@
   grid-gap: 2rem;
   list-style-type: none;
   padding-inline-start: 0;
+}
 
-  @media (min-width: 64em) {
+@media (min-width: 64em) {
+  .root {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
