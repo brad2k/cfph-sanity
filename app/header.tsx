@@ -82,9 +82,18 @@ function NavContent({ visible, setVisible }: NavContentProps) {
         <li>
           <NavLink href="/coaches">Coaches</NavLink>
         </li>
-        <li>
-          <NavLink href="/about-us">About us</NavLink>
-        </li>
+        <DropdownWrapper>
+          <DropdownTrigger href="/about-us">About us</DropdownTrigger>
+
+          <DropdownList>
+            <DropdownListItem>
+              <NavLink href="/about-us">About us</NavLink>
+            </DropdownListItem>
+            <DropdownListItem>
+              <NavLink href="/faq">FAQ</NavLink>
+            </DropdownListItem>
+          </DropdownList>
+        </DropdownWrapper>
       </ul>
 
       <div className={styles.navSecondary}>
