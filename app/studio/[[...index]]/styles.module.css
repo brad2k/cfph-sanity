@@ -1,0 +1,5 @@
+.studioCustomizations {
+  & svg {
+    max-width: unset;
+  }
+}

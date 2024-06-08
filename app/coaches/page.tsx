@@ -5,13 +5,34 @@ import PageWrapper from "@/components/pageWrapper";
 import { Metadata } from "next";
 import styles from "./styles.module.css";
 
+import { sanityFetch } from "@/sanity/client";
+import { groq, SanityDocument } from "next-sanity";
+
+const COACHES_QUERY = groq`*[_type == "coach"]{_id, name, slug}|order(name desc)`;
+
 export const metadata: Metadata = {
   title: "Coaches - CrossFit Potrero Hill",
 };
 
-export default function Coaches() {
+export default async function Coaches() {
+  //const coaches = await client.fetch(COACHES_QUERY);
+  const coaches = await sanityFetch<SanityDocument[]>({ query: COACHES_QUERY });
+  console.log(coaches);
+
   return (
     <>
+      <ul>
+        {coaches.map((coach) => (
+          <li key={coach._id}>
+            <a
+              className="hover:underline"
+              href={`/coaches/${coach.slug.current}`}
+            >
+              <h2>{coach?.name}</h2>
+            </a>
+          </li>
+        ))}
+      </ul>
       <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
         <Heading headingLevel="h1">Coaches</Heading>
       </Hero>

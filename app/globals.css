@@ -21,7 +21,7 @@
 
   /* Nav */
   --navHeight: 6rem;
-  --navZIndex: 10;
+  --navZIndex: 200;
 
   /* Media queries */
   --mqSmall: 37.5em;
@@ -103,7 +103,7 @@ h6 {
   text-wrap: balance;
 }
 
-.sr-only {
+.sr-only:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
   height: 1px;
