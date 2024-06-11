@@ -29,6 +29,18 @@ export const coach = defineType({
       rows: 4,
     }),
     defineField({
+      name: "role",
+      title: "Role",
+      type: "string",
+      initialValue: "coach",
+      options: {
+        list: [
+          { title: "Coach", value: "coach" },
+          { title: "Head coach", value: "headCoach" },
+        ],
+      },
+    }),
+    defineField({
       type: "array",
       name: "certifications",
       title: "Certifications",

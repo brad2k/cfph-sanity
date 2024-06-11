@@ -1,8 +1,10 @@
-import { defineType, defineField, defineArrayMember } from 'sanity'
+import { defineType, defineField, defineArrayMember } from "sanity";
+import { RiPagesLine } from "react-icons/ri";
 
 export const page = defineType({
   type: "document",
   name: "page",
+  icon: RiPagesLine,
   fields: [
     defineField({
       type: "string",
@@ -37,4 +39,3 @@ export const page = defineType({
     }),
   ],
 });
-

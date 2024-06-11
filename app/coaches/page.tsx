@@ -7,55 +7,79 @@ import styles from "./styles.module.css";
 
 import { sanityFetch } from "@/sanity/client";
 import { groq, SanityDocument } from "next-sanity";
+import Link from "next/link";
 
-const COACHES_QUERY = groq`*[_type == "coach"]{_id, name, slug}|order(name desc)`;
+const COACHES_QUERY = groq`*[_type == "coach"]{_id, name, role, slug}|order(name desc)`;
 
 export const metadata: Metadata = {
   title: "Coaches - CrossFit Potrero Hill",
 };
 
+export const IMAGES: Record<string, string> = {
+  "alexis-garrod":
+    "https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/5c733c42-9d2a-42d3-9e7f-1189db8ce3fa/2Q0A1592_crop.jpg",
+  "rachel-bradford":
+    "https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/c058693c-999c-4d72-a066-189efb53662a/2Q0A1536_crop.jpg",
+  "chris-comma":
+    "https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/e3d80e17-9a4f-4bfa-b306-11c1225e99e8/2Q0A1569_crop.jpg",
+  "marciano-pimentel":
+    "https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/90b6b52b-c1f3-4908-af36-0cd7752fe8d5/2Q0A1689_crop.jpg",
+  "amber-pace":
+    "https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/b7f62b3a-725a-432e-8c8b-d6a595f44377/2Q0A1577_crop.jpg",
+  "mike-cicciarelli":
+    "https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/ec2df456-0bda-4ef7-b9d0-b5e9a07f43ac/2Q0A1509_crop.jpg",
+  "nadia-khan":
+    "https://images.squarespace-cdn.com/content/v1/6477b94136ccff61ffe0fd19/8960f642-2eda-4e55-b4be-eebdf6730cf4/IMG_1082.jpg",
+};
+
+const ROLE_LABELS: Record<string, string> = {
+  coach: "Coach",
+  headCoach: "Head coach",
+};
+
 export default async function Coaches() {
-  //const coaches = await client.fetch(COACHES_QUERY);
   const coaches = await sanityFetch<SanityDocument[]>({ query: COACHES_QUERY });
-  console.log(coaches);
 
   return (
     <>
-      <ul>
-        {coaches.map((coach) => (
-          <li key={coach._id}>
-            <a
-              className="hover:underline"
-              href={`/coaches/${coach.slug.current}`}
-            >
-              <h2>{coach?.name}</h2>
-            </a>
-          </li>
-        ))}
-      </ul>
       <Hero img="/cfph-hero.jpg" alt="Athletes warming up for a workout">
         <Heading headingLevel="h1">Coaches</Heading>
       </Hero>
 
       <PageWrapper padding="loose">
         <ul className={styles.root}>
-          <li className={styles.coach}>
-            <figure className={styles.coachFigure}>
-              <img
-                alt="Alexis Garrod"
-                width={2500}
-                height={3125}
-                className={styles.coachPhoto}
-                src="https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/5c733c42-9d2a-42d3-9e7f-1189db8ce3fa/2Q0A1592_crop.jpg"
-              />
-            </figure>
+          {coaches.map((coach) => (
+            <li key={coach._id}>
+              <Link
+                href={`/coaches/${coach.slug.current}`}
+                className={styles.coach}
+              >
+                <figure className={styles.coachFigure}>
+                  <img
+                    alt={coach.name}
+                    width={2500}
+                    height={3125}
+                    className={styles.coachPhoto}
+                    src={IMAGES[coach.slug.current]}
+                  />
+                </figure>
 
-            <Heading headingLevel="h2" styleAs="h4">
-              <span className={styles.coachLabel}>Head Coach</span>
-              <span className={styles.coachName}>Alexis Garrod</span>
-            </Heading>
+                <Heading headingLevel="h2" styleAs="h4">
+                  {coach?.role && (
+                    <span className={styles.coachLabel}>
+                      {ROLE_LABELS[coach.role]}
+                    </span>
+                  )}
+                  {coach?.name && (
+                    <span className={styles.coachName}>{coach.name}</span>
+                  )}
+                </Heading>
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-            {/* <p>
+        {/* <p>
               Alexis is no cowgirl to joke about. With 15 year experience as an
               Equestrian Vaulter, she can do handstands on a moving horse —
               don’t try this at home even if you have a horse (this makes her a
@@ -135,25 +159,8 @@ export default async function Coaches() {
               <li>Freestyle Connection</li>
               <li>CrossFit Adaptive</li>
             </ul> */}
-          </li>
 
-          <li className={styles.coach}>
-            <figure className={styles.coachFigure}>
-              <img
-                alt="Rachel Bradford"
-                width={2500}
-                height={3125}
-                className={styles.coachPhoto}
-                src="https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/c058693c-999c-4d72-a066-189efb53662a/2Q0A1536_crop.jpg"
-              />
-            </figure>
-
-            <Heading headingLevel="h2" styleAs="h4">
-              <span className={styles.coachLabel}>Coach</span>
-              <span className={styles.coachName}>Rachel Bradford</span>
-            </Heading>
-
-            {/* <p>
+        {/* <p>
               I was born and raised in CA, where I grew up with a family that
               loved sports. I played basketball, softball, and competed in track
               and field as a youth. My husband and I moved to Scotland where we
@@ -214,25 +221,8 @@ export default async function Coaches() {
               <li>CrossFit Level 3 Trainer (CF-L3)</li>
               <li>USAW Level 1 Certification</li>
             </ul> */}
-          </li>
 
-          <li className={styles.coach}>
-            <figure className={styles.coachFigure}>
-              <img
-                alt="Chris Comma"
-                width={2500}
-                height={3125}
-                className={styles.coachPhoto}
-                src="https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/e3d80e17-9a4f-4bfa-b306-11c1225e99e8/2Q0A1569_crop.jpg"
-              />
-            </figure>
-
-            <Heading headingLevel="h2" styleAs="h4">
-              <span className={styles.coachLabel}>Coach</span>
-              <span className={styles.coachName}>Chris Comma</span>
-            </Heading>
-
-            {/* <p>
+        {/* <p>
               I was born and raised in Brooklyn, NY where I grew up with a love
               of baseball, which I played through High School. I subsequently
               served four (4) years in the US Navy followed by college and law
@@ -321,25 +311,8 @@ export default async function Coaches() {
               <li>CrossFit Kettlebell Course</li>
               <li>Precision Nutrition Level 1</li>
             </ul> */}
-          </li>
 
-          <li className={styles.coach}>
-            <figure className={styles.coachFigure}>
-              <img
-                alt="Marciano Pimentel"
-                width={2500}
-                height={3125}
-                className={styles.coachPhoto}
-                src="https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/90b6b52b-c1f3-4908-af36-0cd7752fe8d5/2Q0A1689_crop.jpg"
-              />
-            </figure>
-
-            <Heading headingLevel="h2" styleAs="h4">
-              <span className={styles.coachLabel}>Coach</span>
-              <span className={styles.coachName}>Marciano Pimentel</span>
-            </Heading>
-
-            {/* <p>
+        {/* <p>
               As long-distance runner, I never did weight training. One day, I
               stepped on a curb wrong while running and threw my back out. My
               brother, Victor, was coaching CrossFit at the time and was always
@@ -408,25 +381,8 @@ export default async function Coaches() {
               <li>CrossFit Level 2 Trainer (CF-L2)</li>
               <li>USAW Sport Performance Certificate</li>
             </ul> */}
-          </li>
 
-          <li className={styles.coach}>
-            <figure className={styles.coachFigure}>
-              <img
-                alt="Amber Pace"
-                width={2500}
-                height={3125}
-                className={styles.coachPhoto}
-                src="https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/b7f62b3a-725a-432e-8c8b-d6a595f44377/2Q0A1577_crop.jpg"
-              />
-            </figure>
-
-            <Heading headingLevel="h2" styleAs="h4">
-              <span className={styles.coachLabel}>Coach</span>
-              <span className={styles.coachName}>Amber Pace</span>
-            </Heading>
-
-            {/* <p>
+        {/* <p>
               Originally from Raleigh, NC, I am born and bred a Tar Heel. I grew
               up playing youth basketball and running track. After graduating
               from college, I moved around quite a bit and joined local gyms in
@@ -497,25 +453,8 @@ export default async function Coaches() {
               <li>CrossFit Level 1 Trainer (CF-L1)</li>
               <li>CrossFit Level 2 Trainer (CF-L2)</li>
             </ul> */}
-          </li>
 
-          <li className={styles.coach}>
-            <figure className={styles.coachFigure}>
-              <img
-                alt="Mike Cicciarelli"
-                width={2500}
-                height={3125}
-                className={styles.coachPhoto}
-                src="https://images.squarespace-cdn.com/content/v1/633e5ea06ff19b3170e4ea41/ec2df456-0bda-4ef7-b9d0-b5e9a07f43ac/2Q0A1509_crop.jpg"
-              />
-            </figure>
-
-            <Heading headingLevel="h2" styleAs="h4">
-              <span className={styles.coachLabel}>Coach</span>
-              <span className={styles.coachName}>Mike Cicciarelli</span>
-            </Heading>
-
-            {/* <p>
+        {/* <p>
               I’ve been around sports from an early age as my dad was a track,
               cross-country and basketball coach. I played football, wrestled
               and ran track all through high school and stayed physically fit
@@ -586,25 +525,8 @@ export default async function Coaches() {
               <li>USAW Level 1 Certification</li>
               <li>Judges Certificate (2022)</li>
             </ul> */}
-          </li>
 
-          <li className={styles.coach}>
-            <figure className={styles.coachFigure}>
-              <img
-                alt="Nadia Khan"
-                width={2500}
-                height={3125}
-                className={styles.coachPhoto}
-                src="https://images.squarespace-cdn.com/content/v1/6477b94136ccff61ffe0fd19/8960f642-2eda-4e55-b4be-eebdf6730cf4/IMG_1082.jpg"
-              />
-            </figure>
-
-            <Heading headingLevel="h2" styleAs="h4">
-              <span className={styles.coachLabel}>Coach</span>
-              <span className={styles.coachName}>Nadia Khan</span>
-            </Heading>
-
-            {/* <p>
+        {/* <p>
               I was born and raised in Houston, TX though I have lived in a
               number of places since then. I first developed a love for fitness
               through a passion for running. I ran cross-country and track in
@@ -642,8 +564,6 @@ export default async function Coaches() {
               <li>CrossFit Level 1 Trainer (CF-L1)</li>
               <li>USAW Level 1 Certification</li>
         </ul> */}
-          </li>
-        </ul>
       </PageWrapper>
       <JoinNow />
     </>
